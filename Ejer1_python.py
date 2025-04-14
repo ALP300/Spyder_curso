@@ -24,17 +24,19 @@ print("********ESTADÍSTICAS SOLAMENTE NÚMEROS*********")
 print(nuevo.describe(include=[np.number]))
 
 nuevo= nuevo.replace("N/A","0")
-nuevo= nuevo.replace("N/A","0")
+nuevo= nuevo.replace("NR","0")
 
 print("********ESTADÍSTICAS SIN N/A Y NR*********")
 print(nuevo.describe())
 print(list(nuevo))
 
+nuevo['Wsets']= nuevo.Wsets.astype(int)
+nuevo['WRank']= nuevo.WRank.astype(int)
+print("*****ESTADÍSTICAS DE RANKING Y SETS*******")
+print(nuevo.describe())
 
 
-
-
-
+print(datos.head())
 
 
 
